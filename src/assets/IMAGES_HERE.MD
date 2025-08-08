@@ -1,0 +1,1 @@
+Images can go in this asset folder/directory.
