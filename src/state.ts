@@ -1,13 +1,19 @@
 import { create } from "zustand"
 
-interface CounterState {
-  count: number
-  increment: () => void
-  decrement: () => void
+type Step = "gallery" | "about"
+interface MyState {
+  prints: {
+    id: string
+    name: string
+    description: string
+    image: string
+  }[]
+  step: Step
+  setStep: (step: Step) => void
 }
 
-export const useCounterStore = create<CounterState>((set) => ({
-  count: 0,
-  increment: () => set((state: CounterState) => ({ count: state.count + 1 })),
-  decrement: () => set((state: CounterState) => ({ count: state.count - 1 })),
+export const useMyState = create<MyState>((set) => ({
+  prints: [],
+  step: "gallery",
+  setStep: (step: Step) => set({ step }),
 }))

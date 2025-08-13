@@ -15,35 +15,20 @@ const root = createGlobalTheme("#app", {
 const colors = createThemeContract({
   background: "",
   text: "",
-  palette1: "",
-  palette2: "",
-  palette3: "",
-  palette4: "",
-  palette5: "",
-})
-export const vars = createGlobalTheme("*", {
-  color: {
-    primary: "blue",
-    secondary: "red",
-  },
+  burst: "",
+  yellow: "",
+  stone: "",
+  sunset: "",
+  dark: "",
 })
 export const lightTheme = createTheme(colors, {
   background: "#fff",
   text: "#000",
-  palette1: "#9b5de5",
-  palette2: "#f15bb5",
-  palette3: "#fee440",
-  palette4: "#00bbf9",
-  palette5: "#00f5d4",
-})
-export const darkTheme = createTheme(colors, {
-  background: "#121212",
-  text: "#e0e0e0",
-  palette1: "#9b5de5",
-  palette2: "#f15bb5",
-  palette3: "#fee440",
-  palette4: "#00bbf9",
-  palette5: "#00f5d4",
+  burst: "#9b5de5",
+  yellow: "#E6AB07",
+  stone: "#A8A293",
+  sunset: "linear-gradient(180deg, #843B03 0%, #E6AB07 84.5%)",
+  dark: "#0B1215",
 })
 
 export default { ...root, colors }
