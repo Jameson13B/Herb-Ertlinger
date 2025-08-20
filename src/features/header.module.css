@@ -1,0 +1,59 @@
+/* Create css variables for colors */
+:root {
+  --yellow: #e6ab07;
+  --stone: #a8a293;
+  --sunset: linear-gradient(180deg, #843b03 0%, #e6ab07 84.5%);
+  --dark: #0b1215;
+}
+
+.header {
+  background-color: var(--dark);
+  border-bottom: 1px solid var(--yellow);
+  color: var(--yellow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Special Elite", system-ui, sans-serif;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding-left: 16px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.subtitle {
+  font-size: 13px;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 3rem;
+  margin-right: 44px;
+}
+
+.headerButton {
+  background-color: transparent;
+  font-family: "Special Elite", system-ui, sans-serif;
+  font-size: 24px;
+  color: var(--yellow);
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.headerButton:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  cursor: pointer;
+}
+
+.headerButton.active {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
