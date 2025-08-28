@@ -1,0 +1,43 @@
+.bannerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 25px;
+  padding: 0 16px;
+}
+
+.bannerContentLeft {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.closeIcon {
+  width: 11.5px;
+  max-height: 100%;
+}
+
+.tag {
+  font-family: var(--np-regular);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: var(--stone);
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid var(--stone);
+  text-transform: uppercase;
+}
+
+.shopButton {
+  font-family: var(--np-regular);
+  font-size: 12px;
+  line-height: 16.8px;
+  color: var(--yellow);
+  background-color: transparent;
+  border: 1px solid var(--yellow);
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}

@@ -1,5 +1,4 @@
 import { useMyState } from "./state"
-import "./app.css"
 
 import { Gallery } from "./pages/Gallery.tsx"
 import { About } from "./pages/About.tsx"

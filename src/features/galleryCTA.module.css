@@ -1,0 +1,94 @@
+.galleryCTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.ctaImage {
+  width: 100%;
+  max-width: 500px;
+  background: var(--sunset);
+  padding: 16px 8px 0 8px;
+  border-radius: 4px;
+}
+
+.ctaImageTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.ctaImageTopText {
+  font-family: var(--borel);
+  font-size: 48px;
+  height: 35px;
+}
+
+.ctaImageMiddle {
+  font-family: var(--np-bold);
+  font-size: 16px;
+  line-height: 22.4px;
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.ctaImageBottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  height: 30px;
+  padding: 0 16px;
+}
+
+.ctaImageBottomCacti {
+  height: 20px;
+}
+
+.ctaActions {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.ctaActionsItems {
+  display: flex;
+  align-items: center;
+  gap: 81px;
+}
+
+.ctaActionsItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.ctaActions p {
+  color: var(--stone);
+  font-family: var(--np-semibold);
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.ctaActionsItem path {
+  fill: var(--stone);
+}
+
+/* .ctaActions button {
+  background: var(--yellow);
+  color: var(--dark);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+} */

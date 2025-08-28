@@ -1,11 +1,3 @@
-/* Create css variables for colors */
-:root {
-  --yellow: #e6ab07;
-  --stone: #a8a293;
-  --sunset: linear-gradient(180deg, #843b03 0%, #e6ab07 84.5%);
-  --dark: #0b1215;
-}
-
 .header {
   background-color: var(--dark);
   border-bottom: 1px solid var(--yellow);

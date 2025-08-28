@@ -1,3 +1,19 @@
+/* Create css variables for colors */
+:root {
+  --yellow: #e6ab07;
+  --stone: #a8a293;
+  --sunset: linear-gradient(180deg, #843b03 0%, #e6ab07 84.5%);
+  --dark: #0b1215;
+  --np-regular: "NPRegular";
+  --np-semibold: "NP-SemiBold";
+  --np-bold: "NP-Bold";
+  --borel: "Borel";
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--dark);
   margin: 0;
@@ -13,4 +29,25 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: "NPRegular";
+  src: url("./assets/fonts/NationalPark-Regular.woff2") format("woff2");
+  font-weight: 200 300 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NP-SemiBold";
+  src: url("./assets/fonts/NationalPark-SemiBold.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NP-Bold";
+  src: url("./assets/fonts/NationalPark-Bold.woff2") format("woff2");
+  font-weight: 700 800 900;
+  font-style: normal;
 }
