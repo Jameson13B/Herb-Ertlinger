@@ -1,15 +1,21 @@
-import CactusCrowIcon from "../assets/cactusCrowIcon.svg";
-import BioImage from "../assets/BioImage.jpg";
-import InstaLarge from "../assets/instaLarge.svg";
-import FacebookLarge from "../assets/facebookLarge.svg";
-import EmailLarge from "../assets/emailLarge.svg";
+import CactusCrowIcon from "../assets/cactusCrowIcon.svg"
+import BioImage from "../assets/BioImage.jpg"
+import InstaLarge from "../assets/instaLarge.svg"
+import FacebookLarge from "../assets/facebookLarge.svg"
+import EmailLarge from "../assets/emailLarge.svg"
+import { Button } from "../components/Button"
+import { Banner } from "../features/Banner"
 
-import styles from "./about.module.css";
+import styles from "./about.module.css"
 
 export const About = () => {
   return (
     <>
-      {/* TODO: Banner */}
+      <Banner
+        image='https://placehold.co/1450x420'
+        name='Banner'
+        tags={["USA", "Utah", "Goblin Valley"]}
+      />
       <div className={styles.headerContainer}>
         <img src={CactusCrowIcon} className={styles.headerImg} />
         <h1 className={styles.headerTxt}>About</h1>
@@ -54,8 +60,7 @@ export const About = () => {
               with a growing audience, one print, one story, and one landscape
               at a time.
             </p>
-            {/* TODO: Check button styling */}
-            <button></button>
+            <Button variant='secondary'>Shop Prints</Button>
           </div>
         </div>
         <div className={styles.socialContainer}>
@@ -73,7 +78,11 @@ export const About = () => {
           </div>
         </div>
       </div>
-      {/* TODO: Banner */}
+      <Banner
+        image='https://placehold.co/1450x420'
+        name='Banner'
+        tags={["USA", "Utah", "Goblin Valley"]}
+      />
     </>
-  );
-};
+  )
+}
