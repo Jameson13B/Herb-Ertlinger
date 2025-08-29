@@ -2,9 +2,9 @@ import styles from "./galleryCTA.module.css"
 import Plateau from "../assets/Plateau.svg"
 import Cacti from "../assets/Cacti.svg"
 import Stars from "../assets/Stars.svg"
-import InstaLarge from "../assets/instaLarge.svg"
-import FacebookLarge from "../assets/facebookLarge.svg"
-import EmailLarge from "../assets/emailLarge.svg"
+import WhiteInsta from "../assets/whiteInsta.svg"
+import WhiteFacebook from "../assets/whiteFacebook.svg"
+import WhiteEmail from "../assets/whiteEmail.svg"
 import { Button } from "../components/Button"
 
 export const GalleryCTA = () => {
@@ -32,21 +32,21 @@ export const GalleryCTA = () => {
             className={styles.ctaActionsItem}
             href="https://www.instagram.com/plateauserts/"
           >
-            <img src={InstaLarge} alt="Instagram" />
+            <img src={WhiteInsta} alt="Instagram" />
             <p>Instagram</p>
           </a>
           <a
             className={styles.ctaActionsItem}
             href="https://www.facebook.com/plateauserts/"
           >
-            <img src={FacebookLarge} alt="Facebook" />
+            <img src={WhiteFacebook} alt="Facebook" />
             <p>Facebook</p>
           </a>
           <a
             className={styles.ctaActionsItem}
             href="mailto:plateauserts@gmail.com"
           >
-            <img src={EmailLarge} alt="Email" />
+            <img src={WhiteEmail} alt="Email" />
             <p>Email</p>
           </a>
         </div>
