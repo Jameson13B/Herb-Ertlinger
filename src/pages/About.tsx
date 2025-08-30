@@ -1,10 +1,10 @@
-import CactusCrowIcon from "../assets/cactusCrowIcon.svg"
 import BioImage from "../assets/BioImage.jpg"
 import InstaLarge from "../assets/instaLarge.svg"
 import FacebookLarge from "../assets/facebookLarge.svg"
 import EmailLarge from "../assets/emailLarge.svg"
-import { Button } from "../components/Button"
 import { Banner } from "../features/Banner"
+import { Button } from "../components/Button"
+import { SectionHeader } from "../components/SectionHeader"
 
 import styles from "./about.module.css"
 
@@ -12,14 +12,13 @@ export const About = () => {
   return (
     <>
       <Banner
-        image='https://placehold.co/1450x420'
-        name='Banner'
+        image="https://placehold.co/1450x420"
+        name="Banner"
         tags={["USA", "Utah", "Goblin Valley"]}
       />
-      <div className={styles.headerContainer}>
-        <img src={CactusCrowIcon} className={styles.headerImg} />
-        <h1 className={styles.headerTxt}>About</h1>
-      </div>
+
+      <SectionHeader title="About" />
+      
       <div className={styles.aboutContent}>
         <p>
           Virginia Gontika is a landscape photographer whose work is deeply
@@ -60,7 +59,7 @@ export const About = () => {
               with a growing audience, one print, one story, and one landscape
               at a time.
             </p>
-            <Button variant='secondary'>Shop Prints</Button>
+            <Button variant="secondary">Shop Prints</Button>
           </div>
         </div>
         <div className={styles.socialContainer}>
@@ -79,8 +78,8 @@ export const About = () => {
         </div>
       </div>
       <Banner
-        image='https://placehold.co/1450x420'
-        name='Banner'
+        image="https://placehold.co/1450x420"
+        name="Banner"
         tags={["USA", "Utah", "Goblin Valley"]}
       />
     </>
