@@ -1,0 +1,11 @@
+.galleryPost {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 360px;
+  margin-bottom: 24px;
+}
+
+.galleryPostImage {
+  height: 100%;
+}
