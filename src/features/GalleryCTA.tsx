@@ -51,7 +51,9 @@ export const GalleryCTA = () => {
           </a>
         </div>
         <div>
-          <Button variant="secondary">SHOP PRINTS</Button>
+          <Button variant="secondary" onClick={() => alert("Open shop")}>
+            SHOP PRINTS
+          </Button>
         </div>
       </div>
     </div>

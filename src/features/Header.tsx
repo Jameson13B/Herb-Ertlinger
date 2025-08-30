@@ -30,7 +30,7 @@ export const Header = () => {
         </button>
         <button
           className={`${styles.headerButton} ${showShop && styles.active}`}
-          onClick={() => setPage("shop")}
+          onClick={() => alert("Open shop")}
         >
           Shop
         </button>
