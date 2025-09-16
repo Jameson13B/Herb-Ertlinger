@@ -1,8 +1,13 @@
 .galleryCTA {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 32px 0;
+  padding: 0 16px;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 }
 
 .ctaImage {
@@ -16,8 +21,15 @@
 .ctaImageTop {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 16px;
+}
+
+.ctaImageTopStars {
+  width: initial;
+  @media (max-width: 767px) {
+    width: 129px;
+  }
 }
 
 .ctaImageTopText {
@@ -54,6 +66,10 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  margin-top: 64px;
+  @media (min-width: 1024px) {
+    margin-top: initial;
+  }
 }
 
 .ctaActionsItems {

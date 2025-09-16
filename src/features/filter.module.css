@@ -1,0 +1,35 @@
+.galleryFiltersSideBar {
+  color: var(--stone);
+  max-width: 280px;
+  width: 100%;
+  border-right: 1px solid var(--yellow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--np-regular);
+}
+
+.filterTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filterTag {
+  color: grey;
+  background-color: transparent;
+  border: 1px solid var(--stone);
+  border-radius: 4px;
+  padding: 2px 4px;
+  line-height: 16.8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 25px;
+  cursor: pointer;
+}
+
+.filterTagActive {
+  color: var(--dark);
+  background: var(--yellow);
+  border: 1px solid var(--dark);
+}

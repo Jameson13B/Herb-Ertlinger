@@ -6,10 +6,11 @@ import { GalleryCTA } from "../features/GalleryCTA"
 import { GalleryPost } from "../components/GalleryPost"
 import { SectionHeader } from "../components/SectionHeader"
 
-import { getAssets } from "../utils/firebase"
+import { getAssets, getConfig } from "../utils/firebase"
 import styles from "./gallery.module.css"
+import { Filter } from "../features/Filter"
 
-interface Asset {
+export interface Asset {
   id: string
   createdAt: string
   fileName: string
@@ -18,6 +19,11 @@ interface Asset {
 
 export const Gallery = () => {
   const [assets, setAssets] = useState<Asset[]>([])
+  const [filterState, setFilterState] = useState<{
+    country: { tag: string; active: boolean }[]
+    region: { tag: string; active: boolean }[]
+    site: { tag: string; active: boolean }[]
+  }>({ country: [], region: [], site: [] })
 
   useEffect(() => {
     const pullAssets = async () => {
@@ -25,11 +31,22 @@ export const Gallery = () => {
 
       setAssets(pulledAssets as Asset[])
     }
+    const fetchConfig = async () => {
+      const configData = await getConfig()
+
+      setFilterState({
+        country: formatTags(configData?.tags.country ?? []),
+        region: formatTags(configData?.tags.region ?? []),
+        site: formatTags(configData?.tags.site ?? []),
+      })
+    }
+
+    fetchConfig()
     pullAssets()
   }, [])
 
   return (
-    <div>
+    <div style={{ paddingTop: "100px" }}>
       <Banner
         image="https://placehold.co/1450x420"
         name="Banner"
@@ -40,11 +57,8 @@ export const Gallery = () => {
 
       <SectionHeader title="Gallery" />
 
-      <div className={styles.galleryContainer}>
-        <div className={styles.galleryFiltersSideBar}>
-          <h2>View by location</h2>
-          <h3>Country:</h3>
-        </div>
+      {/* <div className={styles.galleryContainer}>
+        <Filter filterState={filterState} setFilterState={setFilterState} />
 
         <div className={styles.galleryPostsContainer}>
           {assets.length > 0 ? (
@@ -53,7 +67,13 @@ export const Gallery = () => {
             <div style={{ padding: "24px", color: "white" }}>Loading...</div>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
+
+const formatTags = (tags: string[]) =>
+  tags.map((tag) => ({
+    tag,
+    active: false,
+  }))

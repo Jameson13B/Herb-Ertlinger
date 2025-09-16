@@ -1,19 +1,13 @@
 .galleryContainer {
   display: flex;
   gap: 32px;
+  justify-content: space-between;
   padding: 0 16px;
-}
-
-.galleryFiltersSideBar {
-  color: var(--stone);
-  max-width: 280px;
-  width: 100%;
-  border-right: 1px solid var(--yellow);
 }
 
 .galleryPostsContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin-left: 59px; /* TODO: Review this */
+  justify-content: flex-end;
 }

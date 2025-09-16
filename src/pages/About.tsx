@@ -10,7 +10,7 @@ import styles from "./about.module.css"
 
 export const About = () => {
   return (
-    <>
+    <div style={{ paddingTop: "100px" }}>
       <Banner
         image="https://placehold.co/1450x420"
         name="Banner"
@@ -18,7 +18,7 @@ export const About = () => {
       />
 
       <SectionHeader title="About" />
-      
+
       <div className={styles.aboutContent}>
         <p>
           Virginia Gontika is a landscape photographer whose work is deeply
@@ -82,6 +82,6 @@ export const About = () => {
         name="Banner"
         tags={["USA", "Utah", "Goblin Valley"]}
       />
-    </>
+    </div>
   )
 }

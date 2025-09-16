@@ -11,6 +11,8 @@ import {
   startAfter,
   QueryDocumentSnapshot,
   getDocs,
+  getDoc,
+  doc,
 } from "firebase/firestore"
 import { getStorage, getDownloadURL, ref } from "firebase/storage"
 
@@ -35,6 +37,11 @@ const firstQ = (lastVisible?: QueryDocumentSnapshot) =>
     startAfter(lastVisible || null),
     limit(9)
   )
+
+export const getConfig = async () => {
+  const config = await getDoc(doc(db, "admin", "configs"))
+  return config.data()
+}
 
 export const getAssets = async (
   lastVisible?: QueryDocumentSnapshot | undefined

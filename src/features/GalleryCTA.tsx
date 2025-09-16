@@ -12,7 +12,7 @@ export const GalleryCTA = () => {
     <div className={styles.galleryCta}>
       <div className={styles.ctaImage}>
         <div className={styles.ctaImageTop}>
-          <img src={Stars} alt="Stars" />
+          <img className={styles.ctaImageTopStars} src={Stars} alt="Stars" />
           <p className={styles.ctaImageTopText}>welcome</p>
         </div>
         <p className={styles.ctaImageMiddle}>
@@ -25,26 +25,26 @@ export const GalleryCTA = () => {
           <img src={Cacti} alt="Cacti" className={styles.ctaImageBottomCacti} />
         </div>
       </div>
+
       <div className={styles.ctaActions}>
         <div className={styles.ctaActionsItems}>
-          {/* TODO: Update all links to correct social media links */}
           <a
             className={styles.ctaActionsItem}
-            href="https://www.instagram.com/plateauserts/"
+            href="https://www.instagram.com/goldencrowphotography/"
           >
             <img src={WhiteInsta} alt="Instagram" />
             <p>Instagram</p>
           </a>
           <a
             className={styles.ctaActionsItem}
-            href="https://www.facebook.com/plateauserts/"
+            href="https://www.facebook.com/goldencrowphotography/"
           >
             <img src={WhiteFacebook} alt="Facebook" />
             <p>Facebook</p>
           </a>
           <a
             className={styles.ctaActionsItem}
-            href="mailto:plateauserts@gmail.com"
+            href="mailto:goldencrowphotography@gmail.com"
           >
             <img src={WhiteEmail} alt="Email" />
             <p>Email</p>
