@@ -2,9 +2,11 @@ import BioImage from "../assets/BioImage.jpg"
 import InstaLarge from "../assets/instaLarge.svg"
 import FacebookLarge from "../assets/facebookLarge.svg"
 import EmailLarge from "../assets/emailLarge.svg"
+import aboutBanner from "../assets/aboutBanner.jpg"
+import AboutHeaderIcon from "../assets/AboutHeaderIcon.svg"
+import aboutBanner2 from "../assets/aboutBanner2.jpg"
 import { Banner } from "../features/Banner"
 import { Button } from "../components/Button"
-import { SectionHeader } from "../components/SectionHeader"
 
 import styles from "./about.module.css"
 
@@ -12,12 +14,12 @@ export const About = () => {
   return (
     <div style={{ paddingTop: "100px" }}>
       <Banner
-        image="https://placehold.co/1450x420"
-        name="Banner"
+        image={aboutBanner}
+        name='Banner'
         tags={["USA", "Utah", "Goblin Valley"]}
       />
 
-      <SectionHeader title="About" />
+      <img src={AboutHeaderIcon} className={styles.aboutIcon} />
 
       <div className={styles.aboutContent}>
         <p>
@@ -59,7 +61,7 @@ export const About = () => {
               with a growing audience, one print, one story, and one landscape
               at a time.
             </p>
-            <Button variant="secondary">Shop Prints</Button>
+            <Button variant='secondary'>Shop Prints</Button>
           </div>
         </div>
         <div className={styles.socialContainer}>
@@ -78,8 +80,8 @@ export const About = () => {
         </div>
       </div>
       <Banner
-        image="https://placehold.co/1450x420"
-        name="Banner"
+        image={aboutBanner2}
+        name='Banner'
         tags={["USA", "Utah", "Goblin Valley"]}
       />
     </div>

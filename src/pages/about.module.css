@@ -81,3 +81,8 @@
   line-height: 14px;
   text-transform: uppercase;
 }
+
+.aboutIcon {
+  display: block;
+  margin: 0 auto;
+}

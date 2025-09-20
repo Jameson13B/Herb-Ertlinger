@@ -11,3 +11,8 @@
   gap: 24px;
   justify-content: flex-end;
 }
+
+.headerIcon {
+  display: block;
+  margin: 0 auto;
+}

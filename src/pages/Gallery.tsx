@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 
 import { Banner } from "../features/Banner"
+import galleryBanner from "../assets/galleryBanner.jpg"
 import { GalleryCTA } from "../features/GalleryCTA"
 
 import { GalleryPost } from "../components/GalleryPost"
-import { SectionHeader } from "../components/SectionHeader"
+import galleryHeaderIcon from "../assets/galleryHeaderIcon.svg"
 
 import { getAssets, getConfig } from "../utils/firebase"
 import styles from "./gallery.module.css"
@@ -48,14 +49,18 @@ export const Gallery = () => {
   return (
     <div style={{ paddingTop: "100px" }}>
       <Banner
-        image="https://placehold.co/1450x420"
-        name="Banner"
+        image={galleryBanner}
+        name='Banner'
         tags={["USA", "Utah", "Goblin Valley"]}
       />
 
       <GalleryCTA />
 
-      <SectionHeader title="Gallery" />
+      <img
+        src={galleryHeaderIcon}
+        alt='Gallery Header Icon'
+        className={styles.headerIcon}
+      />
 
       {/* <div className={styles.galleryContainer}>
         <Filter filterState={filterState} setFilterState={setFilterState} />
