@@ -1,6 +1,5 @@
 import adminHeaderIcon from "../assets/adminHeaderIcon.svg"
-import { AdminPhotos } from "../features/adminPhotos/AdminPhotos"
-import { AdminTags } from "../features/adminTags/AdminTags"
+import { AdminPhotos, AdminTags } from "../features"
 import styles from "./admin.module.css"
 
 export const Admin = () => {
