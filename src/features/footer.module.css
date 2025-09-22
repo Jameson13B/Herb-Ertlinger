@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   color: var(--yellow);
   font-family: var(--np-regular);
   font-size: 10px;
