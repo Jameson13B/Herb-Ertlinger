@@ -1,0 +1,20 @@
+.dropdown {
+  width: 240px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--stone);
+  border-radius: 4px;
+  color: var(--stone);
+  font-size: 16px;
+  font-family: var(--np-semibold);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none; /* For Safari and Chrome */
+  -moz-appearance: none; /* For Firefox */
+}
+.dropdown.active {
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}

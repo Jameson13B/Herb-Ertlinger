@@ -1,15 +1,15 @@
 import styles from "./banner.module.css"
-import { TagBar } from "../components/TagBar"
+import { TagBar } from "../components"
 
 export const Banner = (props: {
   image: string
   name: string
-  tags: string[]
+  tags: { country: string[]; region: string[]; site: string[] }
 }) => {
   return (
     <div className={styles.banner}>
       <img className={styles.bannerImage} src={props.image} alt={props.name} />
-      <TagBar tags={props.tags} />
+      <TagBar id="TODO" tags={props.tags} />
     </div>
   )
 }

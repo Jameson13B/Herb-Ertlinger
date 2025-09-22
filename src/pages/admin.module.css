@@ -1,0 +1,91 @@
+.adminContainer {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 32px auto;
+}
+
+.adminContent {
+  border: 1px solid #e6ab07;
+  border-radius: 4px;
+  padding: 8px 32px;
+  max-width: 660px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.adminContentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--stone);
+}
+
+.adminContentRow:first-child {
+  border-bottom: 3px solid #e6ab07;
+}
+
+.adminContentRow:last-child {
+  border-bottom: none;
+}
+
+.adminContentRowHeader {
+  color: var(--stone);
+  font-family: Sen;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33.6px;
+  vertical-align: middle;
+}
+
+.adminContentRowTitle {
+  color: var(--stone);
+  font-family: var(--np-semibold);
+  font-size: 16px;
+  font-weight: 600;
+  width: 100px;
+}
+
+.adminContentRowInput {
+  background: var(--dark);
+  border: 1px solid var(--stone);
+  border-radius: 4px;
+  color: var(--stone);
+  cursor: text;
+  font-family: var(--np-bold);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  padding: 3px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 240px;
+  &::placeholder {
+    color: var(--stone);
+  }
+}
+.adminContentRowInput.active {
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+}
+
+.adminContentTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: right;
+  gap: 32px;
+  width: 50%;
+}
+.adminContentTag {
+  font-family: var(--np-regular);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  border: 1px solid;
+}

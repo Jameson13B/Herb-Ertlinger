@@ -5,7 +5,7 @@ import Stars from "../assets/Stars.svg"
 import WhiteInsta from "../assets/whiteInsta.svg"
 import WhiteFacebook from "../assets/whiteFacebook.svg"
 import WhiteEmail from "../assets/whiteEmail.svg"
-import { Button } from "../components/Button"
+import { Button } from "../components"
 
 export const GalleryCTA = () => {
   return (

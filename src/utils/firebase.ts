@@ -1,9 +1,6 @@
 import { initializeApp } from "firebase/app"
 import {
   getFirestore,
-  // arrayUnion,
-  // arrayRemove,
-  // serverTimestamp,
   query,
   collection,
   orderBy,
@@ -11,10 +8,12 @@ import {
   startAfter,
   QueryDocumentSnapshot,
   getDocs,
-  getDoc,
   doc,
+  updateDoc,
+  onSnapshot,
+  getDoc,
 } from "firebase/firestore"
-import { getStorage, getDownloadURL, ref } from "firebase/storage"
+import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage"
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -30,18 +29,25 @@ const app = initializeApp(firebaseConfig)
 
 // Firestore instance
 export const db = getFirestore(app)
+export const assetsRef = collection(db, "assets")
+export const configsRef = doc(db, "admin", "configs")
+
+export const getConfig = () => {
+  return new Promise((resolve) => {
+    const unsubscribe = onSnapshot(configsRef, (doc) => {
+      resolve(doc.data())
+    })
+    return unsubscribe
+  })
+}
+
 const firstQ = (lastVisible?: QueryDocumentSnapshot) =>
   query(
-    collection(db, "assets"),
+    assetsRef,
     orderBy("createdAt"),
     startAfter(lastVisible || null),
     limit(9)
   )
-
-export const getConfig = async () => {
-  const config = await getDoc(doc(db, "admin", "configs"))
-  return config.data()
-}
 
 export const getAssets = async (
   lastVisible?: QueryDocumentSnapshot | undefined
@@ -57,11 +63,31 @@ export const getAssets = async (
 
   return await Promise.all(results)
 }
-// export const currentTimestamp = () => serverTimestamp()
-// export const addArray = (item: unknown) => arrayUnion(item)
-// export const removeArray = (item: unknown) => arrayRemove(item)
+
+// Tag functions
+export const getTags = async () => {
+  const tags = await getDoc(configsRef)
+  return tags.data()?.tags
+}
+export const saveTags = async (tags: {
+  country: string[]
+  region: string[]
+  site: string[]
+}) => {
+  await updateDoc(doc(db, "admin", "configs"), { tags })
+}
 
 // Storage instance
-const storage = getStorage(app)
+export const storage = getStorage(app)
+export const storageRef = ref(storage, `photos/state.fileName`)
+
 export const getAssetUrl = async (path: string) =>
   await getDownloadURL(ref(storage, path))
+
+export const uploadPhoto = async (
+  fileName: string,
+  asset: Blob | ArrayBuffer | Uint8Array
+) => {
+  const storageRef = ref(storage, fileName)
+  await uploadBytes(storageRef, asset)
+}

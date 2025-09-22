@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { useMyState } from "../state"
+import { useMyState } from "../utils/state"
 import Logo from "../assets/Logo.svg"
 import Menu from "../assets/Menu.svg"
 import Close from "../assets/Close.svg"

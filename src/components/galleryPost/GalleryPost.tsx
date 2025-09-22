@@ -1,10 +1,10 @@
-import { TagBar } from "./TagBar"
+import { TagBar } from "../tagBar/TagBar"
 import styles from "./galleryPost.module.css"
 
 interface GalleryPostProps {
   fileName: string
   id: string
-  tags: string[]
+  tags: { country: string[]; region: string[]; site: string[] }
 }
 
 export const GalleryPost = (props: GalleryPostProps) => {
