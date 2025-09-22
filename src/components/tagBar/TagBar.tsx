@@ -1,10 +1,10 @@
 import styles from "./tagBar.module.css"
-import geoIcon from "../assets/geoIcon.svg"
+import geoIcon from "../../assets/geoIcon.svg"
 
 export const TagBar = (props: {
   id: string
   sx?: React.CSSProperties
-  tags: string[]
+  tags: { country: string[]; region: string[]; site: string[] }
 }) => {
   const handleShopClick = (id: string) => {
     alert(`Open shop for ${id}`)
@@ -17,7 +17,11 @@ export const TagBar = (props: {
     >
       <div className={styles.bannerContentLeft}>
         <img src={geoIcon} alt="Close" className={styles.geoIcon} />
-        {props.tags.map((tag) => (
+        {[
+          ...(props.tags?.country ?? []),
+          ...(props.tags?.region ?? []),
+          ...(props.tags?.site ?? []),
+        ].map((tag) => (
           <span key={tag} className={styles.tag}>
             {tag}
           </span>

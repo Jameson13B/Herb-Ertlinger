@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 
 import { Banner } from "../features/Banner"
 import galleryBanner from "../assets/galleryBanner.jpg"
+import galleryHeaderIcon from "../assets/galleryHeaderIcon.svg"
 import { GalleryCTA } from "../features/GalleryCTA"
 
-import { GalleryPost } from "../components/GalleryPost"
-import galleryHeaderIcon from "../assets/galleryHeaderIcon.svg"
+import { GalleryPost } from "../components"
 
 import { getAssets, getConfig } from "../utils/firebase"
 import styles from "./gallery.module.css"
@@ -15,7 +15,11 @@ export interface Asset {
   id: string
   createdAt: string
   fileName: string
-  tags: string[]
+  tags: { country: string[]; region: string[]; site: string[] }
+}
+
+interface Config {
+  tags: { country: string[]; region: string[]; site: string[] }
 }
 
 export const Gallery = () => {
@@ -33,7 +37,7 @@ export const Gallery = () => {
       setAssets(pulledAssets as Asset[])
     }
     const fetchConfig = async () => {
-      const configData = await getConfig()
+      const configData = (await getConfig()) as Config
 
       setFilterState({
         country: formatTags(configData?.tags.country ?? []),
@@ -50,19 +54,19 @@ export const Gallery = () => {
     <div style={{ paddingTop: "100px" }}>
       <Banner
         image={galleryBanner}
-        name='Banner'
-        tags={["USA", "Utah", "Goblin Valley"]}
+        name="Banner"
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
       />
 
       <GalleryCTA />
 
       <img
         src={galleryHeaderIcon}
-        alt='Gallery Header Icon'
+        alt="Gallery Header Icon"
         className={styles.headerIcon}
       />
 
-      {/* <div className={styles.galleryContainer}>
+      <div className={styles.galleryContainer}>
         <Filter filterState={filterState} setFilterState={setFilterState} />
 
         <div className={styles.galleryPostsContainer}>
@@ -72,7 +76,7 @@ export const Gallery = () => {
             <div style={{ padding: "24px", color: "white" }}>Loading...</div>
           )}
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

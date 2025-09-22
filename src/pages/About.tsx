@@ -6,7 +6,7 @@ import aboutBanner from "../assets/aboutBanner.jpg"
 import AboutHeaderIcon from "../assets/AboutHeaderIcon.svg"
 import aboutBanner2 from "../assets/aboutBanner2.jpg"
 import { Banner } from "../features/Banner"
-import { Button } from "../components/Button"
+import { Button } from "../components"
 
 import styles from "./about.module.css"
 
@@ -15,8 +15,8 @@ export const About = () => {
     <div style={{ paddingTop: "100px" }}>
       <Banner
         image={aboutBanner}
-        name='Banner'
-        tags={["USA", "Utah", "Goblin Valley"]}
+        name="Banner"
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
       />
 
       <img src={AboutHeaderIcon} className={styles.aboutIcon} />
@@ -61,7 +61,7 @@ export const About = () => {
               with a growing audience, one print, one story, and one landscape
               at a time.
             </p>
-            <Button variant='secondary'>Shop Prints</Button>
+            <Button variant="secondary">Shop Prints</Button>
           </div>
         </div>
         <div className={styles.socialContainer}>
@@ -81,8 +81,8 @@ export const About = () => {
       </div>
       <Banner
         image={aboutBanner2}
-        name='Banner'
-        tags={["USA", "Utah", "Goblin Valley"]}
+        name="Banner"
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
       />
     </div>
   )

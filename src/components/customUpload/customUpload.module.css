@@ -1,0 +1,31 @@
+.customFileButton {
+  border: 1px solid var(--stone);
+  color: var(--stone);
+  background: transparent;
+  height: 36px;
+  width: 240px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: var(--np-semibold);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  &:hover {
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+  }
+}
+
+.customFileName {
+  color: var(--yellow);
+  font-family: var(--np-semibold);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: right;
+  vertical-align: middle;
+  padding: 8.5px 0;
+}
