@@ -9,10 +9,10 @@ interface MyState {
 }
 
 export const useMyState = create<MyState>((set) => ({
-  showGallery: false,
+  showGallery: true,
   showAbout: false,
   showShop: false,
-  showAdmin: true,
+  showAdmin: false,
   setShowGallery: (showGallery: boolean) => set({ showGallery }),
   setShowAbout: (showAbout: boolean) => set({ showAbout }),
   setShowShop: (showShop: boolean) => set({ showShop }),
