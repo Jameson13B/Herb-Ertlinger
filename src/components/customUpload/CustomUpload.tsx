@@ -48,7 +48,7 @@ export const CustomUpload = ({
       <input
         id="fileUpload"
         type="file"
-        // accept={".jpg, .jpeg"}
+        accept={"image/jpg, image/jpeg"}
         style={{ display: "none" }}
       />
       {!fileName ? (
