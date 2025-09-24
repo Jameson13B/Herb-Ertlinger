@@ -8,7 +8,7 @@
   color: var(--stone);
   text-box-trim: both;
   text-box-edge: cap;
-  font-family: "National Park ";
+  font-family: var(--np-semibold);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -74,7 +74,7 @@
   color: var(--dark);
   text-box-trim: both;
   text-box-edge: cap;
-  font-family: "National Park ";
+  font-family: var(--np-semibold);
   font-size: 10px;
   font-style: normal;
   font-weight: 600;
