@@ -6,6 +6,29 @@
   margin-bottom: 24px;
 }
 
+/* Portrait orientation styles */
+.portrait {
+  max-width: 250px;
+  width: 100%;
+}
+
+.portrait .galleryPostImage {
+  width: 100%;
+  height: 100%;
+}
+
+/* Landscape orientation styles */
+.landscape {
+  max-width: 500px;
+  width: 100%;
+}
+
+.landscape .galleryPostImage {
+  width: 100%;
+  height: 100%;
+}
+
 .galleryPostImage {
   height: 100%;
+  object-fit: cover;
 }

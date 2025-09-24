@@ -1,4 +1,5 @@
 import { TagBar } from "../tagBar/TagBar"
+import { useImageOrientation } from "../../hooks/useImageOrientation"
 import styles from "./galleryPost.module.css"
 
 interface GalleryPostProps {
@@ -8,8 +9,21 @@ interface GalleryPostProps {
 }
 
 export const GalleryPost = (props: GalleryPostProps) => {
+  const orientation = useImageOrientation(props.fileName)
+
+  const getContainerClass = () => {
+    switch (orientation) {
+      case "portrait":
+        return `${styles.galleryPost} ${styles.portrait}`
+      case "landscape":
+        return `${styles.galleryPost} ${styles.landscape}`
+      default:
+        return styles.galleryPost
+    }
+  }
+
   return (
-    <div className={styles.galleryPost}>
+    <div className={getContainerClass()}>
       <img
         className={styles.galleryPostImage}
         src={props.fileName}
