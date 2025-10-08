@@ -1,17 +1,15 @@
 import { useState } from "react"
-import { VariantModal } from "./VariantModal"
-import { SquareClient, Square } from "square"
+import { Square } from "square"
 
-const client = new SquareClient({
-  token: import.meta.env.VITE_SQUARE_ACCESS_TOKEN,
-})
+import { VariantDrawer } from "./VariantDrawer"
+import { client, locationId } from "../../utils/square"
 
 type UseSquareStoreReturnType = {
   calculateTotal: () => Promise<Square.Order | undefined>
   checkout: () => void
   removeFromCart: (product: Product) => void
   cart: Product[]
-  VariantModal: React.ReactNode
+  BuyButton: React.ReactNode
 }
 
 export type Product = {
@@ -28,12 +26,11 @@ export type Product = {
 
 export const useSquareStore = (): UseSquareStoreReturnType => {
   const [cart, setCart] = useState<Product[]>([])
-  const locationId = import.meta.env.VITE_SQUARE_LOCATION_ID
 
   // Cart Management
-  const addToCart = (product: Product) => setCart([...cart, product])
+  const addToCart = (product: Product) => setCart((cart) => [...cart, product])
   const removeFromCart = (product: Product) =>
-    setCart(
+    setCart((cart) =>
       cart.filter((p) => p.catalog_object_id !== product.catalog_object_id)
     )
   // Precaculate Cart
@@ -58,13 +55,19 @@ export const useSquareStore = (): UseSquareStoreReturnType => {
     })
   }
 
+  // This hook gives you:
+  // - calculateTotal: function to calculate the total of the cart
+  // - checkout: function to checkout the cart
+  // - removeFromCart: function to remove a product from the cart
+  // - cart: the current cart
+  // - AddToCart: a drawer to add a product to the cart
   return {
     calculateTotal,
     checkout,
     removeFromCart,
     cart,
-    VariantModal: (
-      <VariantModal addToCart={addToCart} removeFromCart={removeFromCart} />
+    BuyButton: (
+      <VariantDrawer addToCart={addToCart} removeFromCart={removeFromCart} />
     ),
   }
 }
