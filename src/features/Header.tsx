@@ -11,10 +11,10 @@ import FacebookIcon from "../assets/facebookSmall.svg"
 import EmailIcon from "../assets/emailSmall.svg"
 
 export const Header = () => {
-  const { showGallery, showAbout, showShop, setPage } = useMyState()
+  const { showGallery, showAbout, showCart, setPage } = useMyState()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const handleMobileNav = (page: "gallery" | "about" | "shop") => {
+  const handleMobileNav = (page: "gallery" | "about" | "cart") => {
     setPage(page)
     setMobileMenuOpen(false)
   }
@@ -23,7 +23,7 @@ export const Header = () => {
     <div className={styles.header}>
       <div className={styles.headerBar}>
         <div className={styles.titleContainer}>
-          <img src={Logo} alt="Golden Crow Logo" />
+          <img src={Logo} alt='Golden Crow Logo' />
           <div>
             <h1 className={styles.title}>Golden Crow</h1>
             <h2 className={styles.subtitle}>Photography</h2>
@@ -35,9 +35,9 @@ export const Header = () => {
             onClick={() => setMobileMenuOpen((current) => !current)}
           >
             {mobileMenuOpen ? (
-              <img src={Close} alt="Close" />
+              <img src={Close} alt='Close' />
             ) : (
-              <img src={Menu} alt="Menu" />
+              <img src={Menu} alt='Menu' />
             )}
           </button>
 
@@ -54,10 +54,10 @@ export const Header = () => {
             About
           </button>
           <button
-            className={`${styles.headerButton} ${showShop && styles.active}`}
-            onClick={() => alert("Open shop")}
+            className={`${styles.headerButton} ${showCart && styles.active}`}
+            onClick={() => setPage("cart")}
           >
-            Shop
+            Cart
           </button>
         </div>
       </div>
@@ -77,13 +77,10 @@ export const Header = () => {
               About
             </button>
             <button
-              className={`${styles.mobileMenuButton} ${showShop && styles.active}`}
-              onClick={() => {
-                alert("Open shop")
-                setMobileMenuOpen(false)
-              }}
+              className={`${styles.mobileMenuButton} ${showCart && styles.active}`}
+              onClick={() => handleMobileNav("cart")}
             >
-              Shop
+              Cart
             </button>
           </div>
           <div className={styles.mobileMenuSocials}>

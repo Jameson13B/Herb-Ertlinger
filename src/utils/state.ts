@@ -3,47 +3,47 @@ import { create } from "zustand"
 interface MyState {
   showGallery: boolean
   showAbout: boolean
-  showShop: boolean
   showAdmin: boolean
-  setPage: (page: "gallery" | "about" | "shop" | "admin") => void
+  showCart: boolean
+  setPage: (page: "gallery" | "about" | "admin" | "cart") => void
 }
 
 export const useMyState = create<MyState>((set) => ({
   showGallery: true,
   showAbout: false,
-  showShop: false,
   showAdmin: false,
+  showCart: false,
   setShowGallery: (showGallery: boolean) => set({ showGallery }),
   setShowAbout: (showAbout: boolean) => set({ showAbout }),
-  setShowShop: (showShop: boolean) => set({ showShop }),
+  setShowCart: (showCart: boolean) => set({ showCart }),
   setShowAdmin: (showAdmin: boolean) => set({ showAdmin }),
-  setPage: (page: "gallery" | "about" | "shop" | "admin") =>
+  setPage: (page: "gallery" | "about" | "admin" | "cart") =>
     set(
       page === "gallery"
         ? {
             showGallery: true,
             showAbout: false,
-            showShop: false,
+            showCart: false,
             showAdmin: false,
           }
         : page === "about"
           ? {
               showGallery: false,
               showAbout: true,
-              showShop: false,
+              showCart: false,
               showAdmin: false,
             }
           : page === "admin"
             ? {
                 showGallery: false,
                 showAbout: false,
-                showShop: false,
+                showCart: false,
                 showAdmin: true,
               }
             : {
                 showGallery: false,
                 showAbout: false,
-                showShop: true,
+                showCart: true,
                 showAdmin: false,
               }
     ),
