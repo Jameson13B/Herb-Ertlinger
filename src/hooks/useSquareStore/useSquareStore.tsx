@@ -2,14 +2,12 @@ import { useState } from "react"
 import { Square } from "square"
 
 import { VariantDrawer } from "./VariantDrawer"
+import { CartView } from "./CartView"
 import { client, locationId } from "../../utils/square"
 
 type UseSquareStoreReturnType = {
-  calculateTotal: () => Promise<Square.Order | undefined>
-  checkout: () => void
-  removeFromCart: (product: Product) => void
-  cart: Product[]
-  BuyButton: React.ReactNode
+  BuyButton: (fileName: string) => React.ReactNode
+  CartView: React.ReactNode
 }
 
 export type Product = {
@@ -34,7 +32,7 @@ export const useSquareStore = (): UseSquareStoreReturnType => {
       cart.filter((p) => p.catalog_object_id !== product.catalog_object_id)
     )
   // Precaculate Cart
-  const calculateTotal = async () => {
+  const calculateTotal = async (): Promise<Square.Order | undefined> => {
     const response = await client.orders.calculate({
       order: {
         locationId,
@@ -62,12 +60,20 @@ export const useSquareStore = (): UseSquareStoreReturnType => {
   // - cart: the current cart
   // - AddToCart: a drawer to add a product to the cart
   return {
-    calculateTotal,
-    checkout,
-    removeFromCart,
-    cart,
-    BuyButton: (
-      <VariantDrawer addToCart={addToCart} removeFromCart={removeFromCart} />
+    BuyButton: (fileName: string) => (
+      <VariantDrawer
+        fileName={fileName}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+      />
+    ),
+    CartView: (
+      <CartView
+        cart={cart}
+        calculateTotal={calculateTotal}
+        checkout={checkout}
+        removeFromCart={removeFromCart}
+      />
     ),
   }
 }

@@ -29,7 +29,6 @@ export const Gallery = () => {
     region: { tag: string; active: boolean }[]
     site: { tag: string; active: boolean }[]
   }>({ country: [], region: [], site: [] })
-
   useEffect(() => {
     const pullAssets = async () => {
       const pulledAssets = await getAssets()

@@ -1,14 +1,14 @@
 import styles from "./tagBar.module.css"
 import geoIcon from "../../assets/geoIcon.svg"
+import { useSquareStore } from "../../hooks/useSquareStore/useSquareStore"
 
 export const TagBar = (props: {
+  fileName: string
   id: string
   sx?: React.CSSProperties
   tags: { country: string[]; region: string[]; site: string[] }
 }) => {
-  const handleShopClick = (id: string) => {
-    alert(`Open shop for ${id}`)
-  }
+  const { BuyButton } = useSquareStore()
 
   return (
     <div
@@ -27,12 +27,7 @@ export const TagBar = (props: {
           </span>
         ))}
       </div>
-      <button
-        className={styles.shopButton}
-        onClick={() => handleShopClick(props.id)}
-      >
-        Shop
-      </button>
+      {BuyButton(props.fileName)}
     </div>
   )
 }

@@ -29,7 +29,12 @@ export const GalleryPost = (props: GalleryPostProps) => {
         src={props.fileName}
         alt={props.id}
       />
-      <TagBar id={props.id} sx={{ padding: "0" }} tags={props.tags} />
+      <TagBar
+        fileName={props.fileName}
+        id={props.id}
+        sx={{ padding: "0" }}
+        tags={props.tags}
+      />
     </div>
   )
 }

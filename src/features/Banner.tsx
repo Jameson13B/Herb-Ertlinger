@@ -9,7 +9,7 @@ export const Banner = (props: {
   return (
     <div className={styles.banner}>
       <img className={styles.bannerImage} src={props.image} alt={props.name} />
-      <TagBar id="TODO" tags={props.tags} />
+      <TagBar fileName={props.image} id="TODO" tags={props.tags} />
     </div>
   )
 }

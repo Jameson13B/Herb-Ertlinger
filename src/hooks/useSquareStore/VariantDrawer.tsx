@@ -1,37 +1,93 @@
 import { useState } from "react"
-import { Button, Drawer } from "antd"
+import { Drawer, Radio, type RadioChangeEvent } from "antd"
+import { Button } from "../../components/button/Button"
 import type { Product } from "./useSquareStore"
+import styles from "./variantDrawer.module.css"
 
 export const VariantDrawer = (props: {
+  fileName: string
   addToCart: (product: Product) => void
   removeFromCart: (product: Product) => void
 }) => {
   const [open, setOpen] = useState(false)
+  const [size, setSize] = useState("25x25")
+  const [printingOption, setPrintingOption] = useState(
+    "Photo Paper (Luster Prints)"
+  )
 
   return (
     <>
-      <Button type="primary" onClick={() => setOpen(true)}>
-        Buy
+      <Button
+        variant="primary"
+        onClick={() => {
+          setOpen(true)
+        }}
+        className={styles.shopButton}
+      >
+        Shop
       </Button>
       <Drawer
-        title="CUSTOMIZE YOUR PRINT"
-        closable={{ "aria-label": "Close Button" }}
+        title={<h1>CUSTOMIZE YOUR PRINT</h1>}
+        closeIcon={false}
         onClose={() => setOpen(false)}
         open={open}
+        classNames={{ header: styles.drawerHeader, body: styles.drawerBody }}
       >
-        <p>Some contents here about the print</p>
-        <p>Then there will be some options for the print</p>
-        <ul>
-          <li>Option 1</li>
-          <li>Option 2</li>
-          <li>Option 3</li>
-        </ul>
+        <img
+          className={styles.logo}
+          src={props.fileName}
+          alt="Golden Crow Logo"
+        />
+
         <div>
-          <Button type="default" onClick={() => setOpen(false)}>
+          <h2 style={{ marginBottom: "16px" }}>Size</h2>
+          <Radio.Group
+            className={styles.radioGroup}
+            defaultValue={size}
+            options={[
+              { label: "25x25", value: "25x25" },
+              { label: "48x72", value: "48x72" },
+              { label: "136x154", value: "136x154" },
+            ]}
+            onChange={(value: RadioChangeEvent) => setSize(value.target.value)}
+          />
+        </div>
+
+        <div style={{ marginBottom: "32px" }}>
+          <h2 style={{ marginBottom: "16px", marginTop: "32px" }}>
+            Printing Options
+          </h2>
+          <Radio.Group
+            className={styles.radioGroup}
+            defaultValue={printingOption}
+            options={[
+              {
+                label: "Photo Paper (Luster Prints)",
+                value: "Photo Paper (Luster Prints)",
+              },
+              {
+                label: "Photo Paper (Fine Arts Prints)",
+                value: "Photo Paper (Fine Arts Prints)",
+              },
+              { label: "Canvas Print", value: "Canvas Print" },
+              { label: "Metal Print", value: "Metal Print" },
+            ]}
+            onChange={(value: RadioChangeEvent) =>
+              setPrintingOption(value.target.value)
+            }
+          />
+        </div>
+
+        <div className={styles.subtotal}>
+          <span>Subtotal:</span> <span>$1000</span>
+        </div>
+
+        <div className={styles.buttons}>
+          <Button variant="neutral" onClick={() => setOpen(false)}>
             Cancel
           </Button>
           <Button
-            type="primary"
+            variant="primary"
             onClick={() => {
               props.addToCart({
                 catalog_object_id: "1",
