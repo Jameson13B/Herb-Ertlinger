@@ -16,7 +16,7 @@ export const TagBar = (props: {
       style={{ padding: "0 16px", ...props.sx }}
     >
       <div className={styles.bannerContentLeft}>
-        <img src={geoIcon} alt="Close" className={styles.geoIcon} />
+        <img src={geoIcon} alt='Close' className={styles.geoIcon} />
         {[
           ...(props.tags?.country ?? []),
           ...(props.tags?.region ?? []),
@@ -31,7 +31,7 @@ export const TagBar = (props: {
         className={styles.shopButton}
         onClick={() => handleShopClick(props.id)}
       >
-        Shop
+        Buy
       </button>
     </div>
   )

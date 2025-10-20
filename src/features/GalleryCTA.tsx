@@ -12,7 +12,7 @@ export const GalleryCTA = () => {
     <div className={styles.galleryCta}>
       <div className={styles.ctaImage}>
         <div className={styles.ctaImageTop}>
-          <img className={styles.ctaImageTopStars} src={Stars} alt="Stars" />
+          <img className={styles.ctaImageTopStars} src={Stars} alt='Stars' />
           <p className={styles.ctaImageTopText}>welcome</p>
         </div>
         <p className={styles.ctaImageMiddle}>
@@ -21,39 +21,35 @@ export const GalleryCTA = () => {
           study of the Colorado Plateau.
         </p>
         <div className={styles.ctaImageBottom}>
-          <img src={Plateau} alt="Plateau" />
-          <img src={Cacti} alt="Cacti" className={styles.ctaImageBottomCacti} />
+          <img src={Plateau} alt='Plateau' />
+          <img src={Cacti} alt='Cacti' className={styles.ctaImageBottomCacti} />
         </div>
       </div>
 
       <div className={styles.ctaActions}>
+        <h2 className={styles.ctaActionsTitle}>Contact Me</h2>
         <div className={styles.ctaActionsItems}>
           <a
             className={styles.ctaActionsItem}
-            href="https://www.instagram.com/goldencrowphotography/"
+            href='https://www.instagram.com/goldencrowphotography/'
           >
-            <img src={WhiteInsta} alt="Instagram" />
+            <img src={WhiteInsta} alt='Instagram' />
             <p>Instagram</p>
           </a>
           <a
             className={styles.ctaActionsItem}
-            href="https://www.facebook.com/goldencrowphotography/"
+            href='https://www.facebook.com/goldencrowphotography/'
           >
-            <img src={WhiteFacebook} alt="Facebook" />
+            <img src={WhiteFacebook} alt='Facebook' />
             <p>Facebook</p>
           </a>
           <a
             className={styles.ctaActionsItem}
-            href="mailto:goldencrowphotography@gmail.com"
+            href='mailto:goldencrowphotography@gmail.com'
           >
-            <img src={WhiteEmail} alt="Email" />
+            <img src={WhiteEmail} alt='Email' />
             <p>Email</p>
           </a>
-        </div>
-        <div>
-          <Button variant="secondary" onClick={() => alert("Open shop")}>
-            SHOP PRINTS
-          </Button>
         </div>
       </div>
     </div>

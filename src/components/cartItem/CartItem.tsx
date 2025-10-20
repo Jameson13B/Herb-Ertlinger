@@ -3,11 +3,12 @@ import { Button } from "../button/Button"
 import aboutBanner from "../../assets/aboutBanner.png"
 import trash from "../../assets/trash.svg"
 
-export const CartItem = () => {
+// used: item.name
+export const CartItem = (props) => {
   return (
     <div className={styles.cartItem}>
       <div className={styles.namePicture}>
-        <h2 className={styles.itemName}>Item.name</h2>
+        <h2 className={styles.itemName}>{props.item.name}</h2>
         <img
           src={aboutBanner}
           alt='About Banner'

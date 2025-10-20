@@ -61,7 +61,7 @@ export const About = () => {
               with a growing audience, one print, one story, and one landscape
               at a time.
             </p>
-            <Button variant="secondary">Shop Prints</Button>
+            <Button variant="secondary">View Photos</Button>
           </div>
         </div>
         <div className={styles.socialContainer}>
