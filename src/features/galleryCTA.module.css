@@ -72,6 +72,18 @@
   }
 }
 
+.ctaActionsTitle {
+  color: var(--yellow);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "National Park ";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50.4px; /* 140% */
+  text-transform: uppercase;
+}
+
 .ctaActionsItems {
   display: flex;
   align-items: center;
