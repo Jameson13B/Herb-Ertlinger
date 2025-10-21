@@ -22,8 +22,13 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerBar}>
-        <div className={styles.titleContainer}>
-          <img src={Logo} alt='Golden Crow Logo' />
+        <div
+          className={styles.titleContainer}
+          onClick={() => setPage("gallery")}
+          role="button"
+          tabIndex={0}
+        >
+          <img src={Logo} alt="Golden Crow Logo" />
           <div>
             <h1 className={styles.title}>Golden Crow</h1>
             <h2 className={styles.subtitle}>Photography</h2>
@@ -35,9 +40,9 @@ export const Header = () => {
             onClick={() => setMobileMenuOpen((current) => !current)}
           >
             {mobileMenuOpen ? (
-              <img src={Close} alt='Close' />
+              <img src={Close} alt="Close" />
             ) : (
-              <img src={Menu} alt='Menu' />
+              <img src={Menu} alt="Menu" />
             )}
           </button>
 
