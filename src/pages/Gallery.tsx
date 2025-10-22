@@ -55,7 +55,8 @@ export const Gallery = () => {
       <Banner
         image={galleryBanner}
         name="Banner"
-        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }} // TODO: Add tags
+        id="TODO" // TODO: Add id
       />
 
       <GalleryCTA />

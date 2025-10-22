@@ -16,7 +16,8 @@ export const About = () => {
       <Banner
         image={aboutBanner}
         name="Banner"
-        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }} // TODO: Add tags
+        id="TODO" // TODO: Add id
       />
 
       <img src={AboutHeaderIcon} className={styles.aboutIcon} />
@@ -82,7 +83,8 @@ export const About = () => {
       <Banner
         image={aboutBanner2}
         name="Banner"
-        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }}
+        tags={{ country: ["USA"], region: ["Utah"], site: ["Goblin Valley"] }} // TODO: Add tags
+        id="TODO" // TODO: Add id
       />
     </div>
   )
